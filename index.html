@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!--== head 공통 ====-->
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+    
+    <title>음악공감</title>
+   
+<!--=== mobil 용==  -->
+<link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css" />
+<script src="./js/jquery-1.11.1.min.js"></script>
+<script src="./js/jquery.mobile-1.4.5.min.js"></script>
+<!--<link rel="stylesheet" href="nav.css" /> --><!-- 네이용 css -->
+<!-- 공통 연결 -->
+       <style>
+        html { overflow-y:scroll; overflow-x:hidden; }
+        </style>
+
+<style>
+#bird {
+  background-image: url(bird.png);
+  
+  width: 60px;
+  height: 40px;
+  background-size: 60px 40px;
+  will-change: background-position;
+  -webkit-animation-name: flys;
+          animation-name: flys;
+  -webkit-animation-timing-function: steps(10);
+          animation-timing-function: steps(10);
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 116s;
+          animation-duration: 116s;
+  -webkit-animation-delay: -10.5s;
+          animation-delay: -10.5s;
+}
+ 
+@keyframes flys {
+  0% {
+    transform: translateX(200px)translateY(100px) scale(0.5);
+  }
+  25% {
+    transform: translateX(600px) scale(0.3);
+  }
+  50% {
+    transform: translateX(900px) scale(0.3);
+  }
+
+  100% {
+    transform: translateX(1600px) translateY(0px) scale(0.1);
+  }
+}
+
+.background {
+  /*background: linear-gradient(#81c8fc, #eaf5fb);*/
+  background-image: url("apt.jpg");
+  background-repeat: no-repeat;
+  /*width: 1600px;*/
+  max-width:100%;
+  min-height: 600px;
+  padding : 3px; /*border:solid 3px red;*/
+  background-size: 100% 100%;
+  /*position: absolute;
+  z-index: -999;*/
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="background">
+<h3 style="color:white"> 날라가는 새 원 클릭 노래시작 더블클릭 노래중지</h3>
+
+<p id="bird" onclick="playAudio()" ondblclick="pauseAudio()"><div class="bird"></div></p>
+
+<audio id="myAudio">
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="나그대에게.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+</div> <!-- background end -->
+
+<script>
+var x = document.getElementById("myAudio"); 
+
+function playAudio() { 
+  x.play(); 
+  
+} 
+
+function pauseAudio() { 
+  x.pause(); 
+  
+} 
+</script>
+
+
+</body>
+</html>
